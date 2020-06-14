@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login whit Facebook</title>
+</head>
+
+<body>
+    <!--Facebook versión básica del SDK donde las opciones se configuran con sus valores predeterminados -->
+
+    <a id="loginbtn" onclick="javascript:loginWithFacebook()">Login con Facebook</a></div>
+
+    <div class="fb-like" data-share="true" data-width="450" data-show-faces="true"> </div>
+
+
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId: '569549163988497',
+                cookie: true,
+                xfbml: true,
+                version: 'v3.2'
+            });
+
+            FB.AppEvents.logPageView();
+            fbSDKLoaded()
+        };
+
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script',
+            'facebook-sdk'));
+    </script>
+
+
+    <script src="/script.js"></script>
+</body>
+
+</html>
